@@ -15,10 +15,24 @@ input_method = st.radio("Choose input method:", ["Manual (sliders)", "Upload CSV
 # ---------- OPTION 1: MANUAL SLIDER INPUT ----------
 if input_method == "Manual (sliders)":
     st.sidebar.header("Input Features")
+
+    # Initialize session state for the sliders if not already set
+    if "sliders" not in st.session_state or st.button("🔄 Reset All"):
+        st.session_state.sliders = {feature: 15.0 for feature in feature_names}
+
     user_input = []
+
+    # Display sliders using session state
     for feature in feature_names:
-        val = st.sidebar.slider(f"{feature}", 0.0, 30.0, 15.0)
+        val = st.sidebar.slider(
+            label=feature,
+            min_value=0.0,
+            max_value=30.0,
+            value=st.session_state.sliders[feature],
+            key=feature
+        )
         user_input.append(val)
+        st.session_state.sliders[feature] = val  # Update session state
 
     input_data = np.array(user_input).reshape(1, -1)
 
@@ -26,6 +40,7 @@ if input_method == "Manual (sliders)":
         prediction = model.predict(input_data)[0]
         result = "Benign 😌" if prediction == 1 else "Malignant 😟"
         st.subheader(f"Prediction: {result}")
+
 
 # ---------- OPTION 2: CSV FILE UPLOAD ----------
 else:
