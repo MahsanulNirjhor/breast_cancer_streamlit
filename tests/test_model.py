@@ -1,4 +1,4 @@
-import model  # or just `import model` depending on structure
+from app import model  # or just `import model` depending on structure
 
 def test_model_output():
     # Load data and train the model
