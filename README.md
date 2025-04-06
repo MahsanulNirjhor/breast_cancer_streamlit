@@ -3,7 +3,7 @@
 A beginner-friendly machine learning web app that predicts whether a tumor is **benign** or **malignant** using logistic regression.  
 Built with **Streamlit**, powered by **scikit-learn**, and deployed with a full **CI/CD DevOps pipeline** using **GitHub Actions** and **Streamlit Cloud**.
 
-> 🎓 Developed as part of a mentorship project to help students learn real-world machine learning, test-driven development, and DevOps best practices.
+> 🎓 Developed as part of my machine learning journey to learn real-world machine learning application, test-driven development, and DevOps best practices.
 
 ---
 
@@ -84,3 +84,30 @@ git clone https://github.com/your-username/breast-cancer-predictor.git
 cd breast-cancer-predictor
 pip install -r requirements.txt
 streamlit run streamlit_app.py
+```
+---
+
+## 🐳 Run Locally with Docker
+
+Don’t want to install anything? Run the app using Docker:
+
+### Step 1: Build the Docker image
+
+```bash
+docker build -t breast-cancer-app .
+```
+
+### Step 2: Run the Docker container
+
+```bash
+docker run -p 8501:8501 breast-cancer-app
+```
+
+### Step 3: Open your browser
+Go To: [http://localhost:8501](http://localhost:8501)
+
+## 🙌 Acknowledgements
+- Dataset: [Wisconsin Breast Cancer Dataset](https://www.kaggle.com/datasets/uciml/breast-cancer-wisconsin-data)
+- Streamlit for the UI framework
+- GitHub Actions for automation
+
