@@ -6,7 +6,7 @@ from model import train_model
 # Load model and feature names
 model, feature_names = train_model()
 
-st.title("🧠 Breast Cancer Predictor")
+st.title("🧠 Breast Cancer Predictor with Logistic Regression")
 st.markdown("Predict whether a tumor is **benign or malignant** using ML.")
 
 # Let users choose input method
