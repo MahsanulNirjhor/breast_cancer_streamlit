@@ -1,7 +1,7 @@
 import streamlit as st
 import numpy as np
 import pandas as pd
-from model import train_model
+from app.model import train_model
 
 # Load model and feature names
 model, feature_names = train_model()
