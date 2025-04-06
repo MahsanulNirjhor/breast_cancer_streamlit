@@ -1,2 +1,34 @@
+# 🔒 Sensitive or local-only files
+.env
+secrets.json
+api_keys.txt
+
+# 🗃️ OS-generated files
 .DS_Store
-.dockerignore
+Thumbs.db
+
+# 🐍 Python-specific files
+__pycache__/
+*.pyc
+*.pyo
+
+# 📦 Virtual environments
+venv/
+.env/
+.venv/
+
+# 🐳 Docker-specific
+*.log
+*.pid
+
+# 🧪 Test results
+coverage/
+*.cover
+test-output/
+
+# 📁 Ignore CSVs (for datasets)
+*.csv
+
+# ⚙️ IDE/editor configs
+.vscode/
+.idea/
